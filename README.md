@@ -70,7 +70,6 @@ Add three screenshots using the exact filenames below. GitHub will display them 
 
 
 
-Screenshot guidance is available in [`docs/screenshots/README.md`](docs/screenshots/README.md).
 
 ## Repository structure
 
