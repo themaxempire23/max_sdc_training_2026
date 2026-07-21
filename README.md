@@ -62,7 +62,9 @@ Add three screenshots using the exact filenames below. GitHub will display them 
 
 | Application overview                                                                                           | Model result                                                                                            | Docker services                                                                                              |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| <img src="docs/screenshots/01-ui-overview.png" alt="Add the application overview screenshot here" width="420"> | <img src="docs/screenshots/02-model-result.png" alt="Add the model result screenshot here" width="420"> | <img src="docs/screenshots/03-docker-running.png" alt="Add the Docker services screenshot here" width="420"> |
+| <img width="1670" height="1023" alt="image" src="https://github.com/user-attachments/assets/d20a08f2-2738-4ab1-8d42-c667fa5d1309" />
+ | <img width="919" height="968" alt="image" src="https://github.com/user-attachments/assets/34f1eb90-f195-4c39-99f9-635607622a10" />
+  
 
 Screenshot guidance is available in [`docs/screenshots/README.md`](docs/screenshots/README.md).
 
