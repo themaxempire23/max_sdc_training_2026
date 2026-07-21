@@ -1,23 +1,57 @@
-# Day 5 Loan Model App
+# Day 5 NUST Loan Model Application
 
-This project connects a trained scikit-learn loan model to a Next.js interface through a small FastAPI service.
+An interactive teaching application that connects a generated scikit-learn loan model to a Next.js interface through a FastAPI service. Docker Compose runs the complete project.
+
+The interface uses Namibia University of Science and Technology branding and displays monetary values in Namibian dollars (`N$`).
+
+## Features
+
+- editable applicant values and range sliders;
+- three example applicant profiles;
+- approval probability and confidence result;
+- model-factor contribution chart;
+- live affordability comparison;
+- interactive repayment estimate; and
+- printable assessment summary.
 
 ## Run with Docker
 
-You only need Docker Desktop.
+### Requirements
+
+- Docker Desktop must be installed and running.
+
+### Start
+
+From the repository root:
 
 ```powershell
 cd day_5\deployment
 .\start.ps1
 ```
 
-Then open:
+The script builds the images and starts the containers. To start them in the background instead, run:
 
-- App: http://localhost:3000
-- API documentation: http://localhost:8000/docs
-- API health check: http://localhost:8000/health
+```powershell
+docker compose up --build -d
+```
 
-Stop the app with:
+### Application addresses
+
+| Service | Address |
+| --- | --- |
+| Next.js interface | [http://localhost:3000](http://localhost:3000) |
+| FastAPI documentation | [http://localhost:8000/docs](http://localhost:8000/docs) |
+| FastAPI health check | [http://localhost:8000/health](http://localhost:8000/health) |
+
+### Check container status
+
+```powershell
+docker compose ps
+```
+
+Both `api` and `web` should show a running status. The API should also show as healthy.
+
+### Stop
 
 ```powershell
 .\stop.ps1
@@ -32,18 +66,33 @@ cd day_5\deployment
 .\start-local.ps1
 ```
 
-The script creates a Python environment, trains the model, installs the UI packages, and starts both services.
+The script creates a Python virtual environment, installs the required packages, trains the model, installs the frontend packages and starts both development services.
 
 ## Project structure
 
 ```text
 deployment/
-├── backend/              FastAPI service and model training code
-├── frontend/             Next.js user interface
-├── docker-compose.yml    Starts the complete application
-├── start.ps1             Docker start command
-├── start-local.ps1       Local development command
-└── stop.ps1              Docker stop command
+|-- backend/
+|   |-- app/main.py        FastAPI endpoints
+|   |-- model/             generated loan model
+|   |-- train_model.py     training script
+|   `-- Dockerfile         API container
+|-- frontend/
+|   |-- app/               Next.js interface and API proxy
+|   |-- public/            NUST logo and static assets
+|   `-- Dockerfile         web container
+|-- docker-compose.yml     complete application stack
+|-- start.ps1              Docker startup script
+|-- start-local.ps1        local-development startup script
+`-- stop.ps1               Docker shutdown script
 ```
 
-The deployment notebook in `../Pracs/DIRISA_Deployment_Colab (1).ipynb` regenerates the same model used by the API. The sample model and its decisions are for teaching only, not real lending decisions.
+## Model notebook
+
+The notebook [`../Pracs/DIRISA_Deployment_Colab (1).ipynb`](../Pracs/DIRISA_Deployment_Colab%20%281%29.ipynb) regenerates the model used by the API. Despite the original filename, the completed notebook uses local project paths and does not mount Google Drive.
+
+## Disclaimer
+
+The dataset, generated model and application are provided for teaching. They must not be used to make real lending decisions.
+
+[Return to the main repository README](../../README.md)

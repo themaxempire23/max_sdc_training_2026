@@ -1,51 +1,51 @@
 # SDC Data Science Training 2026
 
-Practical notebooks and deployment exercises for a five-day data science training programme. The repository moves from working with data in pandas to deploying a machine-learning model with a Next.js interface and Docker.
+Practical notebooks and deployment exercises from a five-day data science training programme. The repository progresses from pandas and data preparation to machine learning, natural language processing and deployment with Next.js, FastAPI and Docker.
 
 ## Training outline
 
-| Day | Topic                                 | Main practicals                                                 |
-| --- | ------------------------------------- | --------------------------------------------------------------- |
-| 1   | Python and pandas                     | Loading, inspecting, cleaning and exporting data                |
-| 2   | Statistics and algorithms             | Exploratory analysis, preprocessing, statistics and time series |
-| 3   | Visualisation and supervised learning | Clear charts, classification and model evaluation               |
-| 4   | Unsupervised learning                 | Clustering, dimensionality reduction and image quantisation     |
-| 5   | NLP and deployment                    | Sentiment analysis, FastAPI, Next.js and Docker                 |
+| Day | Topic | Main practicals |
+| --- | --- | --- |
+| 1 | Python and pandas | Loading, inspecting, cleaning and exporting data |
+| 2 | Statistics and algorithms | Exploratory analysis, preprocessing, statistics and time series |
+| 3 | Visualisation and supervised learning | Charts, classification and model evaluation |
+| 4 | Unsupervised learning | Clustering, dimensionality reduction and image quantisation |
+| 5 | NLP and deployment | Sentiment analysis, FastAPI, Next.js and Docker |
 
-Each day contains its own datasets inside its `Pracs` or `Slides-Notes/Datasets` directory. The notebooks use local relative paths and do not require Google Drive.
+Each day contains its own datasets inside its `Pracs` or `Slides-Notes/Datasets` directory. The notebooks use local relative paths and do not require Google Drive or Google Colab storage.
 
 ## Day 5 application
 
-The final practical deploys a generated scikit-learn loan model through:
+The final practical deploys a generated scikit-learn loan model using:
 
-- a Next.js user interface;
+- a responsive Next.js interface;
 - a FastAPI prediction service; and
-- Docker Compose for one-command startup.
+- Docker Compose for straightforward startup.
 
-The interface is branded for the Namibia University of Science and Technology and displays financial amounts in Namibian dollars (`N$`). It includes scenario presets, interactive applicant inputs, an approval-probability gauge, model-factor bars and a repayment estimator.
+The interface is branded for the Namibia University of Science and Technology (NUST). Financial values are displayed in Namibian dollars (`N$`). The application includes example applicant profiles, interactive inputs, an approval-probability gauge, model-contribution charts, affordability comparisons and a repayment estimator.
 
 ### Run with Docker
 
-Install and start Docker Desktop, then run:
+Start Docker Desktop, open PowerShell in the repository and run:
 
 ```powershell
 cd day_5\deployment
 .\start.ps1
 ```
 
-Alternatively:
+You can also use Docker Compose directly from the repository root:
 
 ```powershell
-docker compose -f day_5/deployment/docker-compose.yml up --build
+docker compose -f day_5/deployment/docker-compose.yml up --build -d
 ```
 
-Open the following addresses:
+### Open the application
 
-| Service           | Address                      |
-| ----------------- | ---------------------------- |
-| Web application   | http://localhost:3000        |
-| API documentation | http://localhost:8000/docs   |
-| API health check  | http://localhost:8000/health |
+| Service | Address |
+| --- | --- |
+| Web application | [http://localhost:3000](http://localhost:3000) |
+| API documentation | [http://localhost:8000/docs](http://localhost:8000/docs) |
+| API health check | [http://localhost:8000/health](http://localhost:8000/health) |
 
 Stop the application with:
 
@@ -54,41 +54,42 @@ cd day_5\deployment
 .\stop.ps1
 ```
 
-More deployment details are available in [`day_5/deployment/README.md`](day_5/deployment/README.md).
+See the [Day 5 deployment guide](day_5/deployment/README.md) for local-development instructions and the application structure.
 
 ## Screenshots
 
-Add three screenshots using the exact filenames below. GitHub will display them automatically after the files are placed in `docs/screenshots/`.
+### NUST loan eligibility interface
 
-| Application overview                                                                                           | Model result                                                                                            | Docker services                                                                                              |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| <img width="1670" height="1023" alt="image" src="https://github.com/user-attachments/assets/d20a08f2-2738-4ab1-8d42-c667fa5d1309" />
- | <img width="919" height="968" alt="image" src="https://github.com/user-attachments/assets/34f1eb90-f195-4c39-99f9-635607622a10" />
+<img width="1670" alt="NUST loan eligibility application overview" src="https://github.com/user-attachments/assets/d20a08f2-2738-4ab1-8d42-c667fa5d1309">
 
- <img width="1512" height="203" alt="image" src="https://github.com/user-attachments/assets/fa1cf658-8ddc-4c79-b033-92f8ead91353" />
+### Model result and interactive charts
 
+<img width="919" alt="Loan model result with approval probability and contribution charts" src="https://github.com/user-attachments/assets/34f1eb90-f195-4c39-99f9-635607622a10">
 
+### Docker services
 
-
+<img width="1512" alt="Docker services running for the Next.js web app and FastAPI service" src="https://github.com/user-attachments/assets/fa1cf658-8ddc-4c79-b033-92f8ead91353">
 
 ## Repository structure
 
 ```text
 .
-├── day_1/                 pandas fundamentals
-├── day_2/                 algorithms, statistics and preprocessing
-├── day_3/                 visualisation and supervised learning
-├── day_4/                 unsupervised learning
-├── day_5/
-│   ├── Pracs/             NLP and deployment notebooks
-│   └── deployment/        Next.js, FastAPI and Docker application
-└── docs/screenshots/      images used by this README
+|-- day_1/                 pandas fundamentals
+|-- day_2/                 algorithms, statistics and preprocessing
+|-- day_3/                 visualisation and supervised learning
+|-- day_4/                 unsupervised learning
+|-- day_5/
+|   |-- Pracs/             NLP and deployment notebooks
+|   `-- deployment/        Next.js, FastAPI and Docker application
+`-- docs/screenshots/      optional local README screenshots
 ```
 
-## Notes
+## Important notes
 
-- Run notebooks from the repository root so their relative data paths resolve correctly.
+- Run notebooks from the repository root so relative data paths resolve correctly.
 - Generated models and sample datasets are included for teaching and demonstration.
 - The loan model must not be used for real lending decisions.
 
-# ~By Max
+## Author
+
+Max
