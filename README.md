@@ -64,7 +64,8 @@ Add three screenshots using the exact filenames below. GitHub will display them 
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
 | <img width="1670" height="1023" alt="image" src="https://github.com/user-attachments/assets/d20a08f2-2738-4ab1-8d42-c667fa5d1309" />
  | <img width="919" height="968" alt="image" src="https://github.com/user-attachments/assets/34f1eb90-f195-4c39-99f9-635607622a10" />
-  ![Uploading image.png…]()
+ <img width="1512" height="203" alt="image" src="https://github.com/user-attachments/assets/1bc10878-20cc-4c98-8f6d-044ee701c4ab" />
+
 
 
 Screenshot guidance is available in [`docs/screenshots/README.md`](docs/screenshots/README.md).
