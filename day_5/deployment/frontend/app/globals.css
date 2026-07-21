@@ -178,7 +178,7 @@ button { color: inherit; }
 }
 
 @media (max-width: 800px) {
-  .headerInner, .pageHeading, .scenarioStrip, .dashboard, .siteFooter { width: min(100% - 28px, 1320px); }
+  .headerInner, .pageHeading, .scenarioStrip, .dashboard, .siteFooter { width: min(calc(100% - 28px), 1320px); }
   .dashboard { grid-template-columns: 1fr; }
   .pageHeading { align-items: start; flex-direction: column; gap: 18px; }
   .inputsPanel { order: 0; }
